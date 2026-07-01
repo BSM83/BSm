@@ -1,4 +1,4 @@
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwpG1-KWWeJK4cJsvrhRx8V5I_ZwQhrfnHRQFTm0D57M3MTlo1gocxaUr1DpJsvzRWEXw/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzX_HZ4QFxTaQHvt0DNE9T5qMkemmrMMRwj1GGLwugp_kn5DM7w-mW4dgeX05jwaIPn3w/exec";
 
 const form = document.getElementById("rsvpForm");
 const successMessage = document.getElementById("successMessage");
