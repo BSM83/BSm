@@ -1,0 +1,78 @@
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Montserrat,sans-serif;color:#fff}
+.hero{
+position:relative;
+min-height:100vh;
+background:linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.25)),url('fon.png');
+background-size:cover;
+background-position:center;
+overflow:hidden;
+text-align:center;
+}
+
+/* Фото фиксировано в центре арки */
+.photo-container{
+position:absolute;
+top:95px;
+left:50%;
+transform:translateX(-50%);
+width:420px;
+height:560px;
+z-index:10;
+}
+
+.hero-photo{
+display:block;
+width:100%;
+height:100%;
+object-fit:cover;
+border:none;
+border-radius:0;
+box-shadow:none;
+filter:none;
+}
+
+/* Текст начинается ниже фото */
+.hero-center{
+position:relative;
+z-index:2;
+padding-top:690px;
+padding-bottom:80px;
+max-width:1200px;
+margin:auto;
+}
+
+.subtitle{letter-spacing:8px;font-size:18px;margin-bottom:20px}
+.main-name{font-family:'Cormorant Garamond',serif;font-size:78px;color:#d4af37;line-height:1.1;margin-bottom:15px}
+.main-title{font-size:58px;margin-bottom:25px}
+.date-box{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:30px}
+.date-box div{padding:15px 25px;border:1px solid #d4af37;border-radius:40px;background:rgba(0,0,0,.25)}
+.gold-btn{display:inline-block;padding:18px 40px;background:#d4af37;color:#004b43;text-decoration:none;border-radius:50px;font-weight:700}
+
+.section{
+padding:100px 20px;
+background:linear-gradient(rgba(0,40,35,.7),rgba(0,40,35,.75)),url('fon2.png');
+background-size:cover;
+background-position:center;
+}
+.card{max-width:1000px;margin:auto;background:rgba(0,70,60,.55);padding:60px;border-radius:30px;border:2px solid rgba(212,175,55,.45);text-align:center}
+.card h3{font-size:42px;color:#d4af37;margin-bottom:25px}
+.card p{font-size:24px;line-height:1.8}
+.countdown{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+.time-box{width:160px;height:160px;background:#d4af37;color:#004b43;border-radius:20px;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.time-box span{font-size:56px;font-weight:bold}
+
+@media(max-width:768px){
+.photo-container{
+top:60px;
+width:230px;
+height:300px;
+}
+.hero-center{padding-top:390px}
+.main-name{font-size:38px}
+.main-title{font-size:30px}
+.card h3{font-size:28px}
+.card p{font-size:18px}
+.time-box{width:100px;height:100px}
+.time-box span{font-size:34px}
+}
