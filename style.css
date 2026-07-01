@@ -1,78 +1,745 @@
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Montserrat,sans-serif;color:#fff}
+/* ===================================
+   RESET
+=================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Cormorant Garamond',serif;
+
+    color:#fff;
+
+    background:
+        linear-gradient(rgba(6,38,34,.70),
+        rgba(6,38,34,.78)),
+        url("fon.png") center center / cover no-repeat fixed;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+}
+
+
+/* затемнение */
+
+.background-overlay{
+
+    position:fixed;
+    inset:0;
+
+    background:
+        radial-gradient(circle at top,
+        rgba(212,175,55,.08),
+        transparent 45%);
+
+    pointer-events:none;
+
+    z-index:0;
+
+}
+
+
+/* ===================================
+    CONTAINER
+=================================== */
+
+.container{
+
+    position:relative;
+
+    z-index:5;
+
+    width:min(92%,900px);
+
+    margin:auto;
+
+    padding:45px 0 70px;
+
+}
+
+
+/* ===================================
+ HERO
+=================================== */
+
 .hero{
-position:relative;
-min-height:100vh;
-background:linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.25)),url('fon.png');
-background-size:cover;
-background-position:center;
-overflow:hidden;
-text-align:center;
+
+    text-align:center;
+
+    animation:fadeUp 1s ease;
+
 }
 
-/* Фото фиксировано в центре арки */
-.photo-container{
-position:absolute;
-top:95px;
-left:50%;
-transform:translateX(-50%);
-width:420px;
-height:560px;
-z-index:10;
+
+/* ===================================
+ PHOTO
+=================================== */
+
+.photo-frame{
+
+    width:260px;
+
+    height:260px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    padding:10px;
+
+    background:linear-gradient(
+        135deg,
+        #d4af37,
+        #f7d96a,
+        #b88b1d
+    );
+
+    box-shadow:
+
+        0 0 20px rgba(212,175,55,.35),
+
+        0 0 45px rgba(212,175,55,.25);
+
 }
 
-.hero-photo{
-display:block;
-width:100%;
-height:100%;
-object-fit:cover;
-border:none;
-border-radius:0;
-box-shadow:none;
-filter:none;
+.photo-frame img{
+
+    width:100%;
+
+    height:100%;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    display:block;
+
+    border:4px solid rgba(255,255,255,.15);
+
 }
 
-/* Текст начинается ниже фото */
-.hero-center{
-position:relative;
-z-index:2;
-padding-top:690px;
-padding-bottom:80px;
-max-width:1200px;
-margin:auto;
+
+/* ===================================
+ TITLE
+=================================== */
+
+h1{
+
+    margin-top:28px;
+
+    font-size:54px;
+
+    color:#f6df8d;
+
+    letter-spacing:2px;
+
+    font-weight:600;
+
 }
 
-.subtitle{letter-spacing:8px;font-size:18px;margin-bottom:20px}
-.main-name{font-family:'Cormorant Garamond',serif;font-size:78px;color:#d4af37;line-height:1.1;margin-bottom:15px}
-.main-title{font-size:58px;margin-bottom:25px}
-.date-box{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:30px}
-.date-box div{padding:15px 25px;border:1px solid #d4af37;border-radius:40px;background:rgba(0,0,0,.25)}
-.gold-btn{display:inline-block;padding:18px 40px;background:#d4af37;color:#004b43;text-decoration:none;border-radius:50px;font-weight:700}
+.hero-text{
 
-.section{
-padding:100px 20px;
-background:linear-gradient(rgba(0,40,35,.7),rgba(0,40,35,.75)),url('fon2.png');
-background-size:cover;
-background-position:center;
+    max-width:650px;
+
+    margin:30px auto;
+
+    font-size:26px;
+
+    line-height:1.7;
+
 }
-.card{max-width:1000px;margin:auto;background:rgba(0,70,60,.55);padding:60px;border-radius:30px;border:2px solid rgba(212,175,55,.45);text-align:center}
-.card h3{font-size:42px;color:#d4af37;margin-bottom:25px}
-.card p{font-size:24px;line-height:1.8}
-.countdown{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
-.time-box{width:160px;height:160px;background:#d4af37;color:#004b43;border-radius:20px;display:flex;flex-direction:column;justify-content:center;align-items:center}
-.time-box span{font-size:56px;font-weight:bold}
+
+
+/* ===================================
+ GOLD LINE
+=================================== */
+
+.gold-line{
+
+    width:180px;
+
+    height:2px;
+
+    margin:22px auto;
+
+    background:linear-gradient(
+    to right,
+    transparent,
+    #d4af37,
+    transparent);
+
+}
+
+
+/* ===================================
+ INFO
+=================================== */
+
+.info-section{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+
+    gap:25px;
+
+    margin-top:50px;
+
+}
+
+
+.card{
+
+    padding:35px;
+
+    border-radius:22px;
+
+    backdrop-filter:blur(16px);
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    text-align:center;
+
+    transition:.35s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+
+    0 18px 35px rgba(0,0,0,.35);
+
+}
+
+.icon{
+
+    font-size:42px;
+
+}
+
+.card h2{
+
+    color:#f4d675;
+
+    margin:20px 0;
+
+    font-size:34px;
+
+}
+
+.card p{
+
+    font-size:28px;
+
+    line-height:1.5;
+
+}
+
+
+/* ===================================
+ MAP BUTTON
+=================================== */
+
+.map-button{
+
+    display:inline-block;
+
+    margin-top:24px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:22px;
+
+    padding:14px 34px;
+
+    border-radius:40px;
+
+    background:linear-gradient(
+        135deg,
+        #d4af37,
+        #b98a18);
+
+    transition:.3s;
+
+}
+
+.map-button:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:0 0 22px rgba(212,175,55,.45);
+
+}
+
+
+/* ===================================
+ FORM
+=================================== */
+
+.form-section{
+
+    margin-top:70px;
+
+}
+
+.section-title{
+
+    text-align:center;
+
+    color:#f6df8d;
+
+    font-size:48px;
+
+    margin-bottom:35px;
+
+}
+
+form{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(16px);
+
+    border-radius:24px;
+
+    padding:35px;
+
+    border:1px solid rgba(255,255,255,.10);
+
+}
+
+.form-group{
+
+    margin-bottom:25px;
+
+}
+
+label{
+
+    display:block;
+
+    margin-bottom:12px;
+
+    font-size:28px;
+
+}
+
+input[type=text],
+input[type=tel]{
+
+    width:100%;
+
+    padding:16px 18px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.12);
+
+    color:#fff;
+
+    font-size:22px;
+
+    outline:none;
+
+}
+
+input::placeholder{
+
+    color:#ddd;
+
+}
+
+
+/* RADIO */
+
+.radio-title{
+
+    margin-bottom:18px;
+
+}
+
+.radio-option{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:16px;
+
+    cursor:pointer;
+
+    font-size:24px;
+
+}
+
+.radio-option input{
+
+    transform:scale(1.3);
+
+}
+
+
+/* BUTTON */
+
+.submit-button{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        135deg,
+        #d4af37,
+        #b88b1d);
+
+    color:#fff;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.submit-button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+    0 12px 30px rgba(212,175,55,.35);
+
+}
+
+
+/* ===================================
+ SUCCESS
+=================================== */
+
+.success-box{
+
+    display:none;
+
+    margin-top:35px;
+
+    text-align:center;
+
+    padding:28px;
+
+    border-radius:18px;
+
+    background:rgba(16,114,70,.35);
+
+    border:1px solid rgba(255,255,255,.15);
+
+}
+
+.success-box h2{
+
+    color:#f4d675;
+
+    margin-bottom:15px;
+
+    font-size:42px;
+
+}
+
+.success-box p{
+
+    font-size:28px;
+
+    line-height:1.6;
+
+}
+
+
+/* ===================================
+ DUA
+=================================== */
+
+.dua-section{
+
+    margin-top:70px;
+
+}
+
+.dua-card{
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:25px;
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    padding:40px;
+
+    text-align:center;
+
+}
+
+.dua-card h2{
+
+    color:#f5da80;
+
+    font-size:42px;
+
+}
+
+.arabic{
+
+    margin-top:28px;
+
+    font-family:'Noto Sans Arabic',serif;
+
+    font-size:40px;
+
+    line-height:2;
+
+}
+
+.translation{
+
+    margin-top:28px;
+
+    font-size:28px;
+
+    line-height:1.8;
+
+}
+
+
+/* ===================================
+ FOOTER
+=================================== */
+
+footer{
+
+    margin-top:70px;
+
+    text-align:center;
+
+}
+
+footer p{
+
+    margin-top:20px;
+
+    font-size:24px;
+
+    color:#e8d28a;
+
+}
+
+
+/* ===================================
+ ANIMATION
+=================================== */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+/* ===================================
+ MOBILE
+=================================== */
 
 @media(max-width:768px){
-.photo-container{
-top:60px;
-width:230px;
-height:300px;
+
+.photo-frame{
+
+width:210px;
+height:210px;
+
 }
-.hero-center{padding-top:390px}
-.main-name{font-size:38px}
-.main-title{font-size:30px}
-.card h3{font-size:28px}
-.card p{font-size:18px}
-.time-box{width:100px;height:100px}
-.time-box span{font-size:34px}
+
+h1{
+
+font-size:40px;
+
+}
+
+.hero-text{
+
+font-size:21px;
+
+}
+
+.card h2{
+
+font-size:28px;
+
+}
+
+.card p{
+
+font-size:22px;
+
+}
+
+.section-title{
+
+font-size:36px;
+
+}
+
+label{
+
+font-size:22px;
+
+}
+
+.radio-option{
+
+font-size:20px;
+
+}
+
+.submit-button{
+
+font-size:24px;
+
+}
+
+.arabic{
+
+font-size:30px;
+
+}
+
+.translation{
+
+font-size:21px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.container{
+
+width:95%;
+
+}
+
+.photo-frame{
+
+width:180px;
+height:180px;
+
+}
+
+h1{
+
+font-size:34px;
+
+}
+
+.hero-text{
+
+font-size:18px;
+
+}
+
+.card{
+
+padding:25px;
+
+}
+
+.card h2{
+
+font-size:24px;
+
+}
+
+.card p{
+
+font-size:20px;
+
+}
+
+.map-button{
+
+font-size:18px;
+
+padding:12px 20px;
+
+}
+
+.section-title{
+
+font-size:30px;
+
+}
+
+input[type=text],
+input[type=tel]{
+
+font-size:18px;
+
+}
+
+.submit-button{
+
+font-size:20px;
+
+}
+
+.arabic{
+
+font-size:26px;
+
+}
+
+.translation{
+
+font-size:18px;
+
+}
+
 }
